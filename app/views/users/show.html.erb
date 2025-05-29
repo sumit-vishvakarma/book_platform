@@ -1,0 +1,17 @@
+<h1 class="text-3xl font-bold mb-6">Profile: <%= @user.email %></h1>
+
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+  <div class="bg-white p-4 rounded shadow text-center">
+    <h2 class="text-xl font-semibold">Books Recommended</h2>
+    <p class="text-3xl font-bold"><%= @user.recommendations.count %></p>
+  </div>
+  <div class="bg-white p-4 rounded shadow text-center">
+    <h2 class="text-xl font-semibold">Votes Received</h2>
+    <p class="text-3xl font-bold"><%= @user.recommendations.joins(:votes).count %></p>
+  </div>
+</div>
+
+<h2 class="text-2xl font-bold mb-4">Your Recommendations</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+  <%= render @user.recommendations %>
+</div>
