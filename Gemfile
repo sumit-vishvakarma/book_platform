@@ -29,7 +29,7 @@ gem "tzinfo-data", platforms: %i[ windows jruby ]
 gem "solid_cache"
 gem "solid_queue"
 gem "solid_cable"
-
+gem "importmap-rails"
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 
@@ -57,12 +57,19 @@ group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
   gem 'rspec-rails', '~> 6.0'
+  gem 'factory_bot_rails'
+  gem 'faker'
+  gem 'rails-controller-testing'
 end
 
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"
+  gem 'shoulda-matchers', '~> 5.0'
+  gem 'factory_bot_rails'
+  gem 'faker'
+  gem 'rails-controller-testing'
 end
 
 gem "devise", "~> 4.9"
