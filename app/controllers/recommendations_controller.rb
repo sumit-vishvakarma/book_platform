@@ -4,6 +4,14 @@ class RecommendationsController < ApplicationController
   def index
     @recommendations = Recommendation.includes(:book, :user).trending
   end
+	
+	def show
+		@recommendation = Recommendation.find(params[:id])
+	end
+	
+	def new
+    @recommendation = Recommendation.new
+  end
 
   def create
     @recommendation = current_user.recommendations.build(recommendation_params)
