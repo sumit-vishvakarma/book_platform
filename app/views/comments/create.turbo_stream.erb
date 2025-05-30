@@ -1,5 +1,5 @@
 <turbo-stream target="comments" action="append">
   <template>
-    <%= render @comment %>
+    <%= render partial: "comment", formats: [:html], locals: { comment: @comment } %>
   </template>
 </turbo-stream>

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :books
   resources :recommendations do
     resources :votes, only: [:create]
+    resources :comments, only: [:create]
   end
   resources :users, only: [:show]
 end

@@ -1,24 +1,45 @@
-# README
+# 🚀 Ruby on Rails 8.0.2 Setup Guide (with Ruby 3.2.2)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 🧰 One-Block Setup for Ubuntu / macOS
 
-Things you may want to cover:
+```bash
+# Install RVM
+\curl -sSL https://get.rvm.io | bash -s stable
+source ~/.rvm/scripts/rvm
 
-* Ruby version
+# Install Ruby 3.2.2
+rvm install 3.2.2
+rvm use 3.2.2 --default
 
-* System dependencies
+# Install Rails
+gem install rails -v 8.0.2
 
-* Configuration
+# Install Node.js and Yarn
 
-* Database creation
+## For Ubuntu
+sudo apt update
+sudo apt install -y nodejs npm
+sudo npm install --global yarn
 
-* Database initialization
+## For macOS (using Homebrew)
+brew install node
+brew install yarn
 
-* How to run the test suite
+# Navigate to your project directory
+cd your-project-name
 
-* Services (job queues, cache servers, search engines, etc.)
+# Install Ruby and JS dependencies
+bundle install
+yarn install
 
-* Deployment instructions
+# Setup the database
+rails db:create
+rails db:migrate
+rails db:seed
 
-* ...
+# Precompile assets
+rails assets:clobber
+rails assets:precompile
+
+# Start the app
+bin/dev
